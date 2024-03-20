@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import './App.css';
 
+
 function App() {
+
+  const [isOpened,setIsOpened] = useState(false);
 
 const data = [
   {
@@ -20,20 +24,23 @@ const data = [
 
 ]
 
+
+
   return (
    <>
    <h1>States and ditricts</h1>
-   {
+   
+      {
     data.map((item)=>
-    <div><h2>{item.State}</h2>
-    <ul>
-      {item.District.map((subitem)=>
-      <li>
-        {subitem.D}
-      </li>
+   
+    <div>
+      <button onClick={()=>item.District && setIsOpened(!isOpened)}>{item.State}</button>
+      
 
-      )}
-    </ul>
+         {item.District.map((subitem)=>
+      <div className={`subitem ${isOpened ? '' :'submenu-Shrunk'}`}> {subitem.D}</div>
+         )}
+    
     
     </div>
     )
