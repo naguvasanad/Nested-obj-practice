@@ -4,3 +4,14 @@
 .submenu-Shrunk{
     display: none;
 }
+
+.menu_item{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+.sub_menu{
+    padding-left: 20px;
+}
+
